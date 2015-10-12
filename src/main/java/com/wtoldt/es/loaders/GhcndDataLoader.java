@@ -53,14 +53,24 @@ public class GhcndDataLoader extends AbstractLoader {
 				.mappings().containsKey("data")) {
 			LOG.info("Creating data mappings...");
 			// add mapping to index
-			final XContentBuilder mappingBuilder = XContentFactory
-					.jsonBuilder().startObject().startObject("data")
-					.startObject("properties").startObject("date")
-					.field("type", "date").field("format", "date").endObject()
-					.startObject("station").startObject("properties")
-					.startObject("location").field("type", "geo_point")
-					.endObject().endObject().endObject().endObject()
-					.endObject().endObject();
+			final XContentBuilder mappingBuilder = XContentFactory.jsonBuilder()
+					.startObject()
+						.startObject("data")
+							.startObject("properties")
+								.startObject("date")
+									.field("type", "date")
+									.field("format", "date")
+								.endObject()
+								.startObject("station")
+									.startObject("properties")
+										.startObject("location")
+											.field("type", "geo_point")
+										.endObject()
+									.endObject()
+								.endObject()
+							.endObject()
+						.endObject()
+					.endObject();
 
 			client.admin().indices().preparePutMapping("weatherdata")
 					.setType("data").setSource(mappingBuilder).execute()
@@ -68,7 +78,7 @@ public class GhcndDataLoader extends AbstractLoader {
 		}
 
 		// Fetch total stations
-		final long totalStations = client.prepareSearch("weatherdata")
+		final long totalStations = client.prepareSearch("weatherdata").setTypes("stations")
 				.setQuery(QueryBuilders.matchAllQuery()).execute().actionGet()
 				.getHits().getTotalHits();
 		LOG.info("found " + totalStations + " stations...");
@@ -79,7 +89,7 @@ public class GhcndDataLoader extends AbstractLoader {
 		final ObjectMapper mapper = new ObjectMapper();
 
 		while (currentSize <= totalStations) {
-			final float percentComplete = currentSize / totalStations;
+			final Float percentComplete = (Float.valueOf(currentSize) / Float.valueOf(totalStations)) * 100;
 			LOG.info("loop from " + currentFrom + " to " + currentSize
 					+ " out of " + totalStations + " (" + percentComplete
 					+ "% complete, " + totalIndexes + " total indexes, "

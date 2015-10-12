@@ -11,12 +11,13 @@ Refer to the [GHCN readme](http://www1.ncdc.noaa.gov/pub/data/ghcn/daily/readme.
 
 Usage
 ----
-+ Make sure to [download Elasticsearch](https://www.elastic.co/products/elasticsearch) and run it.
-+ Import project into Spring Tool Suite
-+ Maven > Update project
-+ Run as Spring Boot application
-
 Included with the project is a small subset (15 stations) of the GHCND data set. The default configuration will run GHCND stations loader, then GHCND data loader, the order is important. GHCND stations loader will create and index station objects for each station in test-data/stations.txt. GHCND data loader will get all stations from Elasticsearch and parse each station file. 
++ Make sure to [download Elasticsearch](https://www.elastic.co/products/elasticsearch) and run it.
++ Clone.
++ Run Maven package (mvn package).
++ Execute jar file (java -jar target\es-load-0.0.1-SNAPSHOT.jar
+
+Alternatively, you could import the project into Eclipse/Spring Tool Suite.
 
 Planned features
 ----
