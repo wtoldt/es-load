@@ -1,0 +1,15 @@
+IN020032500  10.3700   77.0000 1097.0    IYERPADI                                    
+US10chas033  40.3930 -101.7795 1029.0 NE CHAMPION 5.6 SSW                            
+US1ORPK0024  45.0013 -123.1792  106.4 OR RICKREALL 5.5 NNE                           
+IN010011500   9.2500   76.5300   14.0    MAVELIKARA                                  
+USC00207286  42.1000  -86.4833  180.7 MI ST JOSEPH                                   
+US1LACC0009  30.3698  -93.0669    4.6 LA IOWA 9.7 NNW                                
+US1GAHS0019  32.6326  -83.6181  110.3 GA WARNER ROBINS 1.6 NNE                       
+CA001148705  49.1167 -117.7333  567.0 BC WARFIELD RCS                           71401
+US1SCAK0046  33.4778  -81.8371  142.6 SC BEECH ISLAND 4.7 NE                         
+USC00045352  37.4950 -119.9858  640.1 CA MARIPOSA RS                                 
+US1NDAD0002  46.0014 -102.6339  831.8 ND HETTINGER 0.2 S                             
+ASN00093024 -42.3450  147.1906  280.0    LOWER MARSHES (JORDAN RIVER)                
+USS0021B01S  47.7500 -121.0900 1204.0 WA Stevens Pass                                
+PKM00041571  33.6170   73.0990  508.4    CHAKLALA                               41571
+ASN00005024 -21.8067  114.1072   12.0    VLAMINGH HEAD                               
